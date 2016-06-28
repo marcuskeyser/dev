@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test.component</title>
+</head>
+<body>
+    <h1>test.component</h1>
+    <h2>{{pageTitle}}</h2>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Item1</th>
+                    <th>Item2</th>
+                    <th>Item3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="#di of dataItems">
+                    <td>{{di.item1}}</td>
+                    <td>{{di.item2}}</td>
+                    <td>{{di.item3}}</td>
+                </tr>                
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

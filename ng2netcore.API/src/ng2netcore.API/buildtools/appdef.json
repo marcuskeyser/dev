@@ -1,0 +1,34 @@
+{
+  "applications":[
+      {
+          "name":"testApp1",
+          "modules":["testModule1","testModule2"]
+      },
+      {
+          "name":"testApp2",
+          "modules":["testModule3","testModule4"]
+      }
+    ],
+    "modules":[
+      {
+        "name":"testModule1",
+        "src":"appSrc/testModule1/",
+        "key":"testModule1"
+      },
+      {
+          "name": "testModule2",
+          "src":"appSrc/testModule2/",
+          "key":"testModule2"
+      },
+      {
+          "name": "testModule3",
+          "src":"appSrc/testModule3/",
+          "key":"testModule3"
+      },
+      {
+          "name": "testModule4",
+          "src":"appSRc/testModule4/",
+          "key":"testModule4"
+      }
+  ]
+}

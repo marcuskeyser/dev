@@ -1,0 +1,4 @@
+(function(){
+    //product service.js
+
+})();
