@@ -17,6 +17,7 @@ namespace ng2netcore.API.Controllers
 
             List<DataItem> dataItems = new List<DataItem>()
             {
+                new DataItem {item1 = "Howdy :)",item2 = "this is ... ",item3 = "fun!!"},
                 new DataItem {item1 = "dataItem #1",item2 = "dataItem #2",item3 = "dataItem #3"},
                 new DataItem {item1 = "dataItem #A",item2 = "dataItem #B",item3 = "dataItem #C"}
             };

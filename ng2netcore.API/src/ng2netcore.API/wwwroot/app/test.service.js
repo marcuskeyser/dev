@@ -10,13 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var http_1 = require('angular2/http');
+//import {Observable} from 'rxjs/Observable';
+var Rx_1 = require('rxjs/Rx');
+//import 'rxjs/Rx';
 var TestService = (function () {
     function TestService(_http) {
         this._http = _http;
         this._testURL = 'http://localhost:15000/api/values';
     }
+    //getDataItems(): IDataItem[] {
+    //    return [{ "item1": "di-1", "item2": "di-2", "item3": "di-3" }, { "item1": "di-A", "item2": "di-B", "item3": "di-C" }];
+    //}
     TestService.prototype.getDataItems = function () {
-        return [{ "item1": "di-1", "item2": "di-2", "item3": "di-3" }, { "item1": "di-A", "item2": "di-B", "item3": "di-C" }];
+        return this._http.get(this._testURL)
+            .map(function (response) { return response.json(); })
+            .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
+            .catch(this.handleError);
+    };
+    TestService.prototype.handleError = function (error) {
+        console.error(error);
+        return Rx_1.Observable.throw(error.json().error || 'Server Error');
     };
     TestService = __decorate([
         core_1.Injectable(), 

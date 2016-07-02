@@ -10,13 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var test_service_1 = require('./test.service');
+//import {Observable} from 'rxjs/Rx';
 var TestComponent = (function () {
     function TestComponent(_testService) {
         this._testService = _testService;
         this.pageTitle = 'Title for: TestComponent';
     }
     TestComponent.prototype.ngOnInit = function () {
-        this.dataItems = this._testService.getDataItems();
+        var _this = this;
+        //this.dataItems = this._testService.getDataItems();
+        this._testService.getDataItems()
+            .subscribe(function (dataItems) { return _this.dataItems = dataItems; }, function (error) { return _this.errorMessage = error; });
     };
     TestComponent = __decorate([
         core_1.Component({

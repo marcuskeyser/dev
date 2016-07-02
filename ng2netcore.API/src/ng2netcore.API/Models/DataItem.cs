@@ -8,7 +8,6 @@ namespace ng2netcore.API.Models
 {
     public class DataItem
     {
-        public int lenghth { get; set; }
         public string item1 { get; set; }
         public string item2 { get; set; }
         public string item3 { get; set; }

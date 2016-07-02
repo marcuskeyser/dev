@@ -21,7 +21,7 @@ Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
 
 
 
-    })
+    });
     var paths = {};
     paths.webroot = "wwwroot/";
     paths.npmSrc = "./node_modules/";
@@ -48,4 +48,4 @@ Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
     });
     gulp.task("copy-deps", ["copy-deps:rxjs", 'copy-deps:angular2', 'copy-deps:systemjs', 'copy-deps:es6-shim', 'copy-deps:es6-promise']);
 
-})(require('gulp'),require('./buildtools/buildtools.js'),require('chalk'),require('gulp-concat'));
+})(require('gulp'),require('./buildtools/buildtools.js'),require('chalk'),require('gulp-concat'),require('gulp-typescript'));

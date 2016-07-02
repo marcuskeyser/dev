@@ -1,7 +1,5 @@
 import {Component} from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
-//import 'rxjs\Rx';//Load all Features
-
 import {TestComponent} from './test';
 import {TestService} from './test.service';
 

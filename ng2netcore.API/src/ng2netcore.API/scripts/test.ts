@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {IDataItem} from './IDataItem';
-import {TestService} from './test.service'
+import {TestService} from './test.service';
 
 @Component({
     selector: 'drp-test',
@@ -10,13 +10,19 @@ import {TestService} from './test.service'
 
 export class TestComponent {
     pageTitle: string = 'Title for: TestComponent';
-    dataItems: IDataItem[];// = [{ "item1": "1", "item2": "2", "item3": "3" }, { "item1": "A", "item2": "B", "item3": "C" }];
+    dataItems: IDataItem[];
+    errorMessage: string;
 
     constructor(private _testService: TestService) {
 
     }
 
     ngOnInit(): void {
-        this.dataItems = this._testService.getDataItems();
+        this._testService.getDataItems()
+            .subscribe(
+                dataItems => this.dataItems = dataItems,
+                error => this.errorMessage = <any>error
+        );
+
     } 
 }
